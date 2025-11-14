@@ -112,7 +112,7 @@ int main(void)
       /* External Interrupt Disable */
       Demo_IntExtOnOffConfig(DISABLE);
       /* Execute DOWN Function */
-      ////Menu_DownFunc();
+      Menu_DownFunc();
       /* External Interrupt Enable */
       Demo_IntExtOnOffConfig(ENABLE);
     }
@@ -123,7 +123,7 @@ int main(void)
       /* External Interrupt Disable */
       Demo_IntExtOnOffConfig(DISABLE);
       /* Execute SEL Function */
-      ////Menu_SelFunc();
+      Menu_SelFunc();
       /* External Interrupt Enable */
       Demo_IntExtOnOffConfig(ENABLE);
     }
@@ -134,7 +134,7 @@ int main(void)
       /* External Interrupt Disable */
       Demo_IntExtOnOffConfig(DISABLE);
       /* Execute UP Function */
-      ////Menu_UpFunc();
+      Menu_UpFunc();
       /* External Interrupt Enable */
       Demo_IntExtOnOffConfig(ENABLE);
     }
@@ -236,7 +236,7 @@ void Demo_Init(void)
   Demo_LedShowInit();
 
   /* Initialize the Low Power application */
-  LowPower_Init();
+  //LowPower_Init();
   
   /* If HSE is not detected at program startup */
   if (RCC_GetFlagStatus(RCC_FLAG_HSERDY) == RESET)
@@ -245,22 +245,22 @@ void Demo_Init(void)
     SCB->ICSR |= SCB_ICSR_NMIPENDSET;
   }
   /* Initialize Wave player application */
-  ////WavePlayer_Init();
+  WavePlayer_Init();
   
   /* Checks the availability of the bitmap files */
-  ////Demo_CheckBitmapFilesStatus(); 
+  Demo_CheckBitmapFilesStatus(); 
   
   /* Display the STM32 introduction */
-  ////Menu_STM32Intro();
+  Menu_STM32Intro();
   
   /* Clear the LCD */
   LCD_Clear(LCD_COLOR_WHITE);
 
   /* Initialize the Calendar */
-  ////Calendar_Init();
+  Calendar_Init();
 
   /* Initialize the Thermometer application */
-  ////LM75_Init();
+  LM75_Init();
 
   /* Enable Leds toggling */
   Demo_LedShow(ENABLE);
@@ -272,16 +272,16 @@ void Demo_Init(void)
   LCD_SetTextColor(LCD_COLOR_WHITE);
 
   /* Initialize the Menu */
-  ////Menu_Init();
+  Menu_Init();
 
   /* COMP2 Configuration */
-  ////Demo_COMPConfig();
+  Demo_COMPConfig();
 
   /* Reset the StandbyModeStatus */
   StandbyModeStatus = 0x00;
    
   /* Display the main menu icons */
-  ////Menu_ShowMenuIcons();
+  Menu_ShowMenuIcons();
 
   /* Display some text on the LCD screen */
   /* Set the LCD Back Color */

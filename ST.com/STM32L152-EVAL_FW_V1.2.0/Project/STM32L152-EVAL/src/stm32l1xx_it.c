@@ -79,6 +79,9 @@ extern __IO uint32_t  LCDContrast[];
 extern __IO uint8_t ContrastIndex;
 extern WAVE_FormatTypeDef WAVE_Format;
 extern __IO uint8_t LowPowerStatus;
+
+uint32_t systick_1ms;
+
 /**
   * @}
   */
@@ -291,6 +294,7 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
+  systick_1ms++;
   /* Decrement the TimingDelay variable */
   Demo_DecrementTimingDelay();
 }

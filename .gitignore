@@ -6,3 +6,9 @@
 
 # ignore specific extensions
 ##*.pbd
+
+*.dep
+Exe
+List
+Obj
+settings
